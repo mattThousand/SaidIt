@@ -33,6 +33,9 @@ group :assets do
 end
 
 gem 'thin'
+gem 'twitter'
+gem 'sad_panda'
+gem 'zeus'
 
 gem 'jquery-rails'
 

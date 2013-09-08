@@ -10,15 +10,13 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery-1.10.2.js
-//= require vendor/handlebars-1.0.0-rc.4.min.js
-//= require vendor/ember-1.0.0-rc.7.js
-//= require vendor/ember-data-0.13.js
-//= require jquery_ujs
+//= require vendor/handlebars-1.0.0.js
+//= require vendor/jquery-1.9.1.js
+//= require vendor/ember-1.0.0.js
+//= require vendor/ember-data.js
+//= require said_it.js
 //= require_tree ./controllers
 //= require_tree ./models
-//= require_tree ./templates
 //= require_tree ./views
+//= require_tree ./templates
 //= require_tree .
-
-window.SaidIt = Ember.Application.create({});
