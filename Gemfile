@@ -26,6 +26,7 @@ group :development, :test do
   gem 'capybara'
   gem 'shoulda-matchers'
   gem 'qunit-rails'
+  gem 'pry'
 end
 
 group :assets do
