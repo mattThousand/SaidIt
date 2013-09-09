@@ -1,11 +1,14 @@
 module Tweeter
 
-  def self.individual_tweet_info(handle)
+  def self.tweet_info(handle)
+    net_tweet_info = self.aggregate_tweet_info(handle)
+    net_emotion = net_tweet_info["emotion"]
+    net_polarity = net_tweet_info["polarity"]
     output = []
     self.tweeter_timeline(handle).each do |tweet|
       tweet = tweet.instance_variable_get(:@attrs)[:text]
       clean_tweet(tweet)
-      output << { "emotion" => SadPanda.emotion(tweet), "polarity" => SadPanda.polarity(tweet) }
+      output << { "emotion" => SadPanda.emotion(tweet), "polarity" => SadPanda.polarity(tweet), "net_emotion" => net_emotion, "net_polarity" => net_polarity }
     end
     output
   end

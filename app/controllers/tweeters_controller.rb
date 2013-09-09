@@ -1,8 +1,10 @@
 class TweetersController < ApplicationController
 
-  def index
-    # @tweeter = tweeter module stuff
-    render json: @tweeter
+  respond_to :json
+
+  def create
+    @tweeter = Tweeter.tweet_info(params[:handle])
+    render json: { tweeter: @tweeter }
   end
 
 end

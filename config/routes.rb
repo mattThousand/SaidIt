@@ -11,7 +11,10 @@ SaidIt::Application.routes.draw do
     end
   end
 
-  resources :tweeters, only: [:index], constraints: FormatTest.new(:json)
+  resource :tweeter, only: [:index, :create], constraints: FormatTest.new(:json)
+
+  match '/tweeter', to: 'ember#index'
+
   get '*foo', to: 'ember#index', constraints: FormatTest.new(:html)
   get '/', to: 'ember#index', constraints: FormatTest.new(:html)
 

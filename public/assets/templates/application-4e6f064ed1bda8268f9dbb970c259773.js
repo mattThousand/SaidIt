@@ -1,1 +1,0 @@
-window.Ember.TEMPLATES.application=Ember.Handlebars.compile("<p>dsfsd</p>\n");
