@@ -37,6 +37,7 @@ gem 'thin'
 gem 'twitter'
 gem 'sad_panda'
 gem 'zeus'
+gem 'active_model_serializers'
 
 gem 'jquery-rails'
 

@@ -1,10 +1,10 @@
 SaidIt.Router.reopen({
-  location: 'none'
+  rootURL: '/'
 });
+
 
 SaidIt.ApplicationRoute = Ember.Route.extend({
-  model: function() {
-    // return SaidIt.Tweeter.find();
+  model: function(params) {
+    return this.get('store').find('tweeter', params.tweeter_id);
   }
 });
-

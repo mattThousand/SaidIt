@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130830123004) do
+ActiveRecord::Schema.define(:version => 20130911174425) do
 
   create_table "tweeters", :force => true do |t|
     t.string   "handle"
@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(:version => 20130830123004) do
     t.string   "polarity"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "tweets", :force => true do |t|
+    t.string   "emotion"
+    t.string   "polarity"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "tweeter_id"
   end
 
 end
