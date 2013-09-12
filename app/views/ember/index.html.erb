@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <%= stylesheet_link_tag :application, :media => :all %>
+    <%= javascript_include_tag :application %>
+    <title>Title</title>
+  </head>
+  <body>
+    <%= form_tag(:controller => "tweeters", :action => "create") do %>
+    <%= text_field_tag(id='handle')%>
+    <%= submit_tag("Submit") %>
+    <% end %>
+
+    <div id="ember"></div>
+  </body>
+</html>
