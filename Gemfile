@@ -21,6 +21,24 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'shoulda-matchers'
+  gem 'qunit-rails'
+  gem 'pry'
+end
+
+group :assets do
+  gem 'handlebars_assets'
+end
+
+gem 'thin'
+gem 'twitter'
+gem 'sad_panda'
+gem 'zeus'
+gem 'active_model_serializers'
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
