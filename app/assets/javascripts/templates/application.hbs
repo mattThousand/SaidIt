@@ -1,4 +1,13 @@
 <p>this is the application template</p>
+<form>
+  <fieldset>
+    <div>
+      <label {{bindAttr for="handleField.field_id"}}>First Name</label>
+      {{view Ember.TextField valueBinding='handle' name='handle' viewName='handleField'}}
+    </div>
+    <a href='#' {{action save}}>{{buttonTitle}}</a>
+  </fieldset>
+</form>
 {{#each tweeter in controller }}
   <p>{{emotion}}</p>
 {{/each}}
