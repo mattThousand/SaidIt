@@ -3,5 +3,11 @@ SaidIt.ApplicationController = Ember.ArrayController.extend({
     this._super();
   },
 
-  itemController: 'tweeter'
+  itemController: 'tweeter',
+
+  actions: {
+    save: function() {
+      debugger;
+    }
+  }
 });
