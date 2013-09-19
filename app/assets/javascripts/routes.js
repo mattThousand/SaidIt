@@ -6,9 +6,17 @@ SaidIt.Router.map(function() {
   this.resource('tweeters', function() {
     this.route('new');
     this.route('show', { path: '/:tweeter_id'});
+    this.resource('tweet', {
+      path: '/tweet/:tweet_id'
+    });
   });
 });
 
+SaidIt.TweetRoute = Ember.Route.extend({
+  model: function() {
+    return this.get('store').find('tweet');
+  }
+});
 
 SaidIt.ApplicationRoute = Ember.Route.extend({
   model: function(params) {
