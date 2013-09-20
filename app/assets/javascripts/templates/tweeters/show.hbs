@@ -1,7 +1,23 @@
 {{tweets.length}}
 
-{{#each tweet in content.tweets}}
+{{pctJoy}}
+<br/>
+{{pctAnger}}
+<br/>
+{{pctSadness}}
+<br/>
+{{pctAmbiguous}}
+<br/>
+{{pctFear}}
+<br/>
+{{pctDisgust}}
+<br/>
+{{pctSurprise}}
+<br/>
+<br/>
+
+{{#each tweets}}
   <br/>
-  {{tweet.emotion}}
+  {{emotion}}
   <br/>
 {{/each}}
