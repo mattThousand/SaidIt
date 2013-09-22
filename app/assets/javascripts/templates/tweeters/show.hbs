@@ -1,18 +1,25 @@
 {{tweets.length}}
 
-{{pctJoy}}
+
+{{view SaidIt.DonutChartView
+    isLoadedBinding = "controller.model.isLoaded"
+    dataBinding = "controller.model.data"
+  }}
+
+
+<p>{{pctJoy}}</p>
 <br/>
-{{pctAnger}}
+<p>{{pctAnger}}</p>
 <br/>
-{{pctSadness}}
+<p>{{pctSadness}}</p>
 <br/>
-{{pctAmbiguous}}
+<p>{{pctAmbiguous}}</p>
 <br/>
-{{pctFear}}
+<p>{{pctFear}}</p>
 <br/>
-{{pctDisgust}}
+<p>{{pctDisgust}}</p>
 <br/>
-{{pctSurprise}}
+<p>{{pctSurprise}}</p>
 <br/>
 <br/>
 

@@ -14,7 +14,9 @@
 //= require vendor/jquery-1.9.1.js
 //= require vendor/ember-1.0.0.js
 //= require vendor/ember-data.js
+//= require vendor/d3.v3.js
 //= require said_it.js
+//= require_tree ./lib
 //= require_tree ./controllers
 //= require_tree ./models
 //= require_tree ./views
