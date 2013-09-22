@@ -8,6 +8,11 @@ SaidIt.DonutChartView = Ember.View.extend({
   },
 
   updateChart: function() {
-
-  }
+    if (this.get('isLoaded')) {
+      debugger;
+      d3.select(this.$()[0])
+        .data([this.get('data')])
+        .call(this.chart);
+    }
+  }.observes('data')
 });
