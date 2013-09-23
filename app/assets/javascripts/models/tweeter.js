@@ -1,7 +1,7 @@
 SaidIt.Tweeter = DS.Model.extend({
   emotion: DS.attr('string'),
   polarity: DS.attr('string'),
-  tweets: DS.hasMany('tweet'),
+  tweets: DS.hasMany('tweet', {async:true}),
   total: function() {
     var tweets = this.get('tweets');
     return tweets.get('length');
