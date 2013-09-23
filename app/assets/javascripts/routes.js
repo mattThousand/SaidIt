@@ -1,5 +1,6 @@
 SaidIt.Router.reopen({
-  rootURL: '/'
+  rootURL: '/',
+  location: 'history'
 });
 
 SaidIt.Router.map(function() {
