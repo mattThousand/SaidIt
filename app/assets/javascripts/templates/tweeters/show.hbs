@@ -1,23 +1,19 @@
-{{tweets.length}}
-
-{{pctJoy}}
+Hey, {{handle}}!
 <br/>
-{{pctAnger}}
+Showing sentiment for your {{tweets.length}} most recent tweets:
 <br/>
-{{pctSadness}}
+Percentage joyful: {{pctJoy}}
 <br/>
-{{pctAmbiguous}}
+Percentage angry: {{pctAnger}}
 <br/>
-{{pctFear}}
+Percentage sad: {{pctSadness}}
 <br/>
-{{pctDisgust}}
+Percentage ambiguous: {{pctAmbiguous}}
 <br/>
-{{pctSurprise}}
+Percentage fearful: {{pctFear}}
+<br/>
+Percentage disgusted: {{pctDisgust}}
+<br/>
+Percentage surprised: {{pctSurprise}}
 <br/>
 <br/>
-
-{{#each tweets}}
-  <br/>
-  {{emotion}}
-  <br/>
-{{/each}}
