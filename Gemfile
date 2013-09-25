@@ -22,6 +22,7 @@ group :assets do
 end
 
 group :development, :test do
+  gem 'teaspoon'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'shoulda-matchers'
