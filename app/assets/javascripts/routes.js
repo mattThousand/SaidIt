@@ -14,8 +14,8 @@ SaidIt.Router.map(function() {
 });
 
 SaidIt.TweetRoute = Ember.Route.extend({
-  model: function() {
-    return this.get('store').find('tweet');
+  model: function(params) {
+    return this.get('store').find('tweet', params.tweet_id);
   }
 });
 

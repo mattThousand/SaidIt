@@ -1,5 +1,5 @@
 class Tweeter < ActiveRecord::Base
-  attr_accessible :emotion, :handle, :polarity
+  attr_accessible :emotion, :handle, :polarity, :handle
 
   has_many :tweets,
     dependent: :destroy
