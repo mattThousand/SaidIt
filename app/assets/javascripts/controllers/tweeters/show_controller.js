@@ -3,9 +3,9 @@ SaidIt.TweetersShowController = Ember.ObjectController.extend({
     this._super();
   },
   tweetsLoaded: function() {
-    pctJoy = this.get('model').get('pctJoy');
-    console.log(pctJoy);
-    debugger;
-    return pctJoy;
-  }.property('tweets', 'pctJoy')
+    var numTweets = this.get('model').get('tweets').length;
+    if (!(numTweets > 0)) { 
+    }
+    return numTweets;
+  }.property('tweets')
 });
