@@ -1,4 +1,7 @@
-{{#view SaidIt.showView}}
+{{#view SaidIt.showView
+  isLoadedBinding="controller.model.tweets.isLoaded"
+  tweetsLoadedBinding="controller.tweetsLoaded"
+}}
   Showing sentiment for {{handle}}'s {{tweets.length}} most recent tweets:
   <br/>
   Percentage joyful: {{pctJoy}}

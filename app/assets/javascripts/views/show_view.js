@@ -2,13 +2,13 @@ SaidIt.showView = Ember.View.extend({
   classNames: ['show'],
 
   didInsertElement: function(){
-    Ember.run.once(this, 'updateData');
+    Ember.run.debounce(this, 'updateEmotionData',3000);
   },
 
-  updateData: function() {
-    debugger;
-    if (this.get('isLoaded')) {
-      // render show template
+  updateEmotionData: function() {
+    var _this = this;
+    if (this.get('controller').get('model.isLoaded')) {
+      var pctJoy = _this.get('controller.model.pctJoy');
     }
-  }
+  }.observes('controller.tweetsLoaded')
 });
