@@ -1,5 +1,4 @@
 SaidIt.TweetersNewController = Ember.ObjectController.extend({
-
   actions: {
     save: function() {
       var _this = this;

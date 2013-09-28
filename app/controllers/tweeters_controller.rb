@@ -10,10 +10,15 @@ class TweetersController < ApplicationController
   end
 
   def create
-    @handle  = params[:handle]
+    @handle  = params[:tweeter][:handle]
     tweeter = Tweeter.new(handle: @handle)
     tweeter.save
     render json: tweeter
+  end
+
+  def show
+    @tweeter = Tweeter.find(params[:id])
+    render json: @tweeter
   end
 
 end

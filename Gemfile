@@ -41,6 +41,7 @@ gem 'zeus'
 gem 'active_model_serializers'
 
 gem 'jquery-rails'
+gem 'zeus'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

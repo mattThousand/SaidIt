@@ -9,7 +9,7 @@ module("/", {
 
 
 test("/", function(){
-  expect(2);
+  expect(4);
 
   visit("/").then(function() {
     ok(exists("form"), "New tweeter form is present");
@@ -19,12 +19,16 @@ test("/", function(){
     equal(find("a.form-submit").length, 1, "Form submit link is present");
   });
 
-  // visit("/").then(function() {
-  //   return fillIn("handleField", "mattthousand").then(function() {
-  //     return click("a.form-submit").then(function() {
-  //       debugger;
-  //     });
-  //   });
-  // });
+  visit("/").then(function() {
+    equal(find(".handle").length, 1, "Form has a field for twitter handle");
+  });
+
+  visit("/").then(function() {
+    return fillIn(".handle", "mattthousand").then(function() {
+      return click("a.form-submit").then(function() {
+        equal(1,1);
+      });
+    });
+  });
 
 });
