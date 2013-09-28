@@ -11,7 +11,9 @@ SaidIt::Application.routes.draw do
     end
   end
 
-  resources :tweeters, only: [:index, :create]
+  resources :tweeters, except: [:edit],
+    constraints: FormatTest.new(:json)
+
 
 
   get '*foo', to: 'ember#index', constraints: FormatTest.new(:html)

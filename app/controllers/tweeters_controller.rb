@@ -16,4 +16,9 @@ class TweetersController < ApplicationController
     render json: tweeter
   end
 
+  def show
+    @tweeter = Tweeter.find(params[:id])
+    render json: @tweeter
+  end
+
 end
