@@ -1,24 +1,26 @@
-<div class="loading">
-  {{outlet loading}}
-</div>
+<div class="container">
+  <div class="loading">
+    {{outlet loading}}
+  </div>
 
-{{#view SaidIt.showView
-}}
-  Showing sentiment for {{handle}}'s {{tweets.length}} most recent tweets:
-  <br/>
-  Percentage joyful: {{pctJoy}}
-  <br/>
-  Percentage angry: {{pctAnger}}
-  <br/>
-  Percentage sad: {{pctSadness}}
-  <br/>
-  Percentage ambiguous: {{pctAmbiguous}}
-  <br/>
-  Percentage fearful: {{pctFear}}
-  <br/>
-  Percentage disgusted: {{pctDisgust}}
-  <br/>
-  Percentage surprised: {{pctSurprise}}
-  <br/>
-  <br/>
-{{/view }}
+  {{#view SaidIt.showView
+  }}
+    <h3>Showing sentiment for {{handle}}'s {{tweets.length}} most recent tweets:</h3>
+    <br/>
+    <p>Percentage joyful: {{pctJoy}}</p>
+    <br/>
+    <p>Percentage angry: {{pctAnger}}</p>
+    <br/>
+    <p>Percentage sad: {{pctSadness}}</p>
+    <br/>
+    <p>Percentage ambiguous: {{pctAmbiguous}}</p>
+    <br/>
+    <p>Percentage fearful: {{pctFear}}</p>
+    <br/>
+    <p>Percentage disgusted: {{pctDisgust}}</p>
+    <br/>
+    <p>Percentage surprised: {{pctSurprise}}</p>
+    <br/>
+    <br/>
+  {{/view }}
+</div>
