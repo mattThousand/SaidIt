@@ -1,0 +1,16 @@
+#tweeter_loading_bar {
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 250px;
+}
+
+.index-title * {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+#how-it-works-btn {
+  line-height: 10px;
+  padding: 6px 8px 6px;
+}
