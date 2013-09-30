@@ -7,10 +7,11 @@ SaidIt.showView = Ember.View.extend({
   },
 
   activateLoadIcon: function() {
-    
+    this.set('controller.stillLoading', true);
   },
 
   updateEmotionData: function() {
     this.get('controller.model').reload();
+    this.set('controller.stillLoading', false);
   }
 });
