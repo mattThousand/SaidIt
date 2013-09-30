@@ -1,7 +1,8 @@
 SaidIt::Application.configure do
   #ember
-
-  HandlebarsAssets::Config.ember = true
+  if defined?(HandlebarsAssets)
+    HandlebarsAssets::Config.ember = true
+  end
 
   # Settings specified here will take precedence over those in config/application.rb
 
