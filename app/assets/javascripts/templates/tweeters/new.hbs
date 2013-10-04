@@ -1,18 +1,14 @@
 <div class="container">
   <div class="index-title">
     <h1>Welcome to SaidIt</h1>
-    <a id="how-it-works-btn" class="btn btn-default btn-sm btn-block" data-toggle="modal" data-target="#how_it_works_modal" href="#">How it works</a>
+    {{#view SaidIt.detailOpenView}}
+      <a id="how-it-works-btn" class="btn btn-default btn-sm btn-block" data-toggle="modal" data-target="#how_it_works_modal" href="#">How it works</a>
+    {{/view}}
   </div>
 
   {{partial 'tweeters/form'}}
 </div>
 
-<div class="modal fade" id="how_it_works_modal" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class=modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header"></div>
-      <div class="modal-body"></div>
-      <div class="modal-footer"></div>
-    </div>
-  </div>
-</div>
+{{#if modalActivated}}
+  {{ partial how_it_works }} 
+{{/if}}

@@ -1,9 +1,7 @@
 <div class="container">
   {{#view SaidIt.showView}}
     {{#if stillLoading}}
-      <div id="tweeter_loading_bar">
-        <img src="../assets/gif-load-green-rectangles.gif">
-      </div>
+      {{partial loading}}
     {{else}}
       <h3>Showing sentiment for {{handle}}'s {{tweets.length}} most recent tweets:</h3>
       <br/>
