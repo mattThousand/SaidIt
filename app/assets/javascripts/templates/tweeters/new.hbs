@@ -7,8 +7,12 @@
   </div>
 
   {{partial 'tweeters/form'}}
+
+  <div class="how-it-works">
+    {{#if modalActivated}}
+      {{ partial how_it_works }} 
+    {{/if}}
+  </div>
+
 </div>
 
-{{#if modalActivated}}
-  {{ partial how_it_works }} 
-{{/if}}
