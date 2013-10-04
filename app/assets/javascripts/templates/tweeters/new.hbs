@@ -1,8 +1,14 @@
 <div class="container">
   <div class="index-title">
     <h1>Welcome to SaidIt</h1>
-    <a id="how-it-works-btn" class="btn btn-default btn-sm btn-block">How it works</a>
+    {{#view SaidIt.detailOpenView}}
+      <a id="how-it-works-btn" class="btn btn-default btn-sm btn-block" data-toggle="modal" data-target="#how_it_works_modal" href="#">How it works</a>
+    {{/view}}
   </div>
 
   {{partial 'tweeters/form'}}
 </div>
+
+{{#if modalActivated}}
+  {{ partial how_it_works }} 
+{{/if}}
