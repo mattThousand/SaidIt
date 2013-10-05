@@ -4,6 +4,9 @@
       {{partial loading}}
     {{else}}
       <h3>Showing sentiment for {{handle}}'s {{tweets.length}} most recent tweets:</h3>
+      {{#view SaidIt.chartView}}
+        <div id="sentiment_barchart"></div>
+      {{/view}}
       <br/>
       <p>Percentage joyful: {{pctJoy}}</p>
       <br/>
