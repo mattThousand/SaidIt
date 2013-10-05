@@ -13,10 +13,11 @@ test("Initial redirect", function(){
   visit("/").then(function(){
     equal(path(), "tweeters.new", "Redirects to /tweeters/new");
   });
+
 });
 
-test("/", function(){
-  expect(6);
+test("tweeters/new", function(){
+  expect(5);
 
   visit("/").then(function() {
     ok(exists("form"), "New tweeter form is present");
@@ -41,9 +42,16 @@ test("/", function(){
     });
   });
 
+});
+
+
+test("form submission", function() {
+  expect(2)
+
   visit("/").then(function() {
     return fillIn(".handle", "mattthousand").then(function() {
       return click("a.form-submit").then(function() {
+        equal(path(), "tweeters.show", "Redirects to tweeters/show");
         equal(find("#tweeter_loading_bar").length, 1, "Loading template is rendered");
       });
     });
