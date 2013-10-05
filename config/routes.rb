@@ -17,6 +17,9 @@ SaidIt::Application.routes.draw do
 
 
   get '*foo', to: 'ember#index', constraints: FormatTest.new(:html)
-  get '/', to: 'ember#index', constraints: FormatTest.new(:html)
-
+  get '/', to: 'ember#index', constraints: FormatTest.new(:html),
+    constraints: lambda { |request|
+      path = request.env["REQUEST_PATH"]
+      path != "/qunit" && FormatTest.new(:html).matches?(request)
+    }
 end

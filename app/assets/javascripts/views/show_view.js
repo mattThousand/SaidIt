@@ -11,7 +11,9 @@ SaidIt.showView = Ember.View.extend({
   },
 
   updateEmotionData: function() {
-    this.get('controller.model').reload();
-    this.set('controller.stillLoading', false);
+    if (this.get('controller.model')) {
+      this.get('controller.model').reload();
+      this.set('controller.stillLoading', false);
+    }
   }
 });
