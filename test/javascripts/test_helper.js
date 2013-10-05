@@ -9,22 +9,24 @@ SaidIt.setupForTesting();
 SaidIt.injectTestHelpers();
 
 // SaidIt.Store=DS.Store.extend({
-//     adapter : DS.FixtureAdapter.extend({
-//       queryFixtures: function(fixtures, query, type) {
-//         console.log(query);
-//         console.log(type);
-//         return fixtures.filter(function(item) {
-//             for(var prop in query) {
-//                 if( item[prop] != query[prop]) {
-//                     return false;
-//                 }
-//             }
-//             return true;
-//         });
-//       },
-//       simulateRemoteResponse: false
-//     })
+//     adapter : DS.FixtureAdapter
 // });
+
+var testing = function(){
+  var helper = {
+    container: function(){
+      return SaidIt.__container__;
+    },
+    controller: function( name ){
+      return helper.container().lookup('controller:' + name);
+    },
+    path: function(){
+      return helper.controller('application').get('currentPath');
+    }
+  };
+  return helper;
+};
+
 
 var tweeter = {
   id:64,
