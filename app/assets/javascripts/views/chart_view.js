@@ -5,7 +5,6 @@ SaidIt.chartView = Ember.View.extend({
   },
 
   renderBarChart: function() {
-    debugger;
     if (!this.get('controller.stillLoading')) {
       var tweeter = this.get('controller.model');
       SaidIt.BarChart.drawChart("#sentiment_barchart",
