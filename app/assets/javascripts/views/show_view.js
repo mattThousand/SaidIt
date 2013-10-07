@@ -16,5 +16,4 @@ SaidIt.showView = Ember.View.extend({
       this.set('controller.stillLoading', false);
     }
   }
-
 });
