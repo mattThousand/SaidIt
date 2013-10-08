@@ -23,15 +23,15 @@ SaidIt.BarChart.reopenClass({
             [pctAmbiguous, 7]
     ];
     margin = {
-      top:30,
+      top: 0,
       right: 30,
       bottom: 30,
-      left: 30
+      left: 0
     };
 
     width = chartWidth - margin.left - margin.right;
     height = chartHeight - margin.top - margin.bottom;
-//   xDomain = 12;
+    xDomain = [1, data.length];
     yDomain = [
       0, Math.max(
               pctJoy,
@@ -43,12 +43,14 @@ SaidIt.BarChart.reopenClass({
               pctAmbiguous 
             )
     ];
+    xCounter = -1;
     yScale = d3.scale.linear().domain(yDomain).range([0, height]);
     getX = function(d) {
-      return d[1]*10;
+      xCounter++;
+      return xCounter*120;
     },
     getY = function(d) {
-      return yScale(d[0]);
+      return yScale(Math.max(d[0]*2, 0.01));
     },
     attrs = {
       container: {
@@ -57,6 +59,10 @@ SaidIt.BarChart.reopenClass({
       },
       graph: {
         transform: "translate(" + margin.left + "," + margin.top + ")"
+      },
+      xAxis: {
+        "class": 'axis-x',
+        transform: "translate(0, 25)"
       },
       rect: {
         "class": "rect",
@@ -69,6 +75,7 @@ SaidIt.BarChart.reopenClass({
 
 
     chart = d3.select(chartSelector).append("svg").attr(attrs.container).append("g").attr(attrs.graph);
+    chart.append("g").attr(attrs.xAxis).call(xAxis);
     chart.selectAll(".rect").data(data).enter().append("rect").attr(attrs.rect);
   }
 });
