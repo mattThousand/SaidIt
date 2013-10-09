@@ -2,11 +2,11 @@ svg {
 	position: relative;
 	background-color: #f5f5f5;
 	
-	.rect {
+	rect {
 		fill: #2980b9;
 
 		&.over {
-			fill: #36a9e1;
+			fill: red;
 		}
 
 	}
