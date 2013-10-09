@@ -9,7 +9,7 @@ SaidIt.chartView = Ember.View.extend({
       var tweeter = this.get('controller.model');
       SaidIt.BarChart.drawChart("#sentiment_barchart",
                         900, 
-                        365, 
+                        465, 
                         tweeter,
                         this.get('controller.model.pctJoy'),
                         this.get('controller.model.pctAnger'),

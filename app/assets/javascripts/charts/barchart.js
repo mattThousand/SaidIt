@@ -14,13 +14,13 @@ SaidIt.BarChart.reopenClass({
                         pctAmbiguous) {
     var margin, data;
     data = [
-            [pctJoy, 1],
-            [pctAnger, 2],
-            [pctSadness, 3],
-            [pctFear, 4],
-            [pctSurprise, 5],
-            [pctDisgust, 6],
-            [pctAmbiguous, 7]
+            [pctJoy, 1, "Joy: "+pctJoy, 25],
+            [pctAnger, 2, "Anger: "+pctAnger, 25],
+            [pctSadness, 3, "Sadness: "+pctSadness, 13],
+            [pctFear, 4, "Fear: "+pctFear, 29],
+            [pctSurprise, 5, "Surprise: "+pctSurprise, 17],
+            [pctDisgust, 6, "Disgust: "+pctDisgust, 18],
+            [pctAmbiguous, 7, "Ambiguous: "+pctAmbiguous, 1]
     ];
     margin = {
       top: 0,
@@ -55,11 +55,33 @@ SaidIt.BarChart.reopenClass({
                   .attr("width", width*data.length - 1)
                   .attr("height", height);
 
+    getText = function(d) {
+      return d[2];
+    };
+
+    getXOffset = function(d) {
+      return d[3];
+    }
+
+    getX = function(d, i) { return (d[1]*150); };
+
+    getY = function(d) { return Math.max(height - Math.max((d[0]*1000), 10), 50); };
+
+    var attrs ={
+      text: {
+        "fill": "#2980b9",
+        "x": getX,
+        "y": getY,
+        "dx": getXOffset,
+        "dy": -10
+      }
+    };
+
     chart.selectAll("rect")
             .data(data)
           .enter().append("rect")
             .attr("x", function(d, i) { return (d[1]*150); })
-            .attr("y", function(d) { return height - Math.max((d[0]*1000), 10); })
+            .attr("y", function(d) { return Math.max(height - Math.max((d[0]*1000), 10), 50); })
             .attr("width", width/8)
             .attr("height", function(d) { return (Math.max(d[0]*1000, 10))});
 
@@ -68,7 +90,10 @@ SaidIt.BarChart.reopenClass({
      .attr("x2", width * data.length)
      .attr("y1", height - .5)
      .attr("y2", height - .5)
-     .style("stroke", "#000");
+     .style("stroke", "#2980b9");
+
+
+    chart.selectAll(".text").data(data).enter().append("text").attr(attrs.text).text(getText);
     
 
 
