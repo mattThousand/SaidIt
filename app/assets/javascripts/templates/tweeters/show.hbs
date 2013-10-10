@@ -4,23 +4,9 @@
       {{partial loading}}
     {{else}}
       <h3>Showing sentiment for {{handle}}'s {{tweets.length}} most recent tweets:</h3>
-      {{#view SaidIt.chartView}}
+      {{#view SaidIt.ChartView}}
         <div id="sentiment_barchart"></div>
       {{/view}}
-      <br/>
-      <p>Percentage joyful: {{pctJoy}}</p>
-      <br/>
-      <p>Percentage angry: {{pctAnger}}</p>
-      <br/>
-      <p>Percentage sad: {{pctSadness}}</p>
-      <br/>
-      <p>Percentage ambiguous: {{pctAmbiguous}}</p>
-      <br/>
-      <p>Percentage fearful: {{pctFear}}</p>
-      <br/>
-      <p>Percentage disgusted: {{pctDisgust}}</p>
-      <br/>
-      <p>Percentage surprised: {{pctSurprise}}</p>
       <br/>
       {{#link-to 'tweeters.new' classNames="btn btn-primary btn-lg btn-block"}}
         Back

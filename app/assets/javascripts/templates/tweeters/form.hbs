@@ -1,5 +1,5 @@
 <div class="row">
-  <form>
+  <form {{action save on="submit"}}>
     <fieldset>
         {{view Ember.TextField valueBinding='handle' name='handle' viewName='handleField' value="zorg" classNames="handle form-control"}}
       <a href='#' class="form-submit btn btn-block btn-lg btn-primary" {{action save}}>Get Sentiment</a>
