@@ -104,6 +104,11 @@ SaidIt.BarChart.reopenClass({
     chart.selectAll(".rect").data(data).enter().append("rect").attr(attrs.rect).on("mouseover", onMouseOver).on("mouseout", onMouseOut);
 
   
+  },
+
+  eraseChart: function() {
+    d3.select("svg")
+      .remove();
   }
 
 });

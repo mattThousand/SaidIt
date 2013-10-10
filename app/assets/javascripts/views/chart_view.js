@@ -1,4 +1,4 @@
-SaidIt.chartView = Ember.View.extend({
+SaidIt.ChartView = Ember.View.extend({
 
   didInsertElement: function() {
     Ember.run.once(this, 'renderBarChart');
