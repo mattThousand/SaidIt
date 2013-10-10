@@ -1,4 +1,4 @@
-SaidIt.chartView = Ember.View.extend({
+SaidIt.ChartView = Ember.View.extend({
 
   didInsertElement: function() {
     Ember.run.once(this, 'renderBarChart');
@@ -8,8 +8,8 @@ SaidIt.chartView = Ember.View.extend({
     if (!this.get('controller.stillLoading')) {
       var tweeter = this.get('controller.model');
       SaidIt.BarChart.drawChart("#sentiment_barchart",
-                        900, 
-                        465, 
+                        1200, 
+                        570, 
                         tweeter,
                         this.get('controller.model.pctJoy'),
                         this.get('controller.model.pctAnger'),
