@@ -28,6 +28,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'qunit-rails'
   gem 'pry'
+  gem 'jasmine'
 end
 
 group :assets do
