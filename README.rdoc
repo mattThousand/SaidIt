@@ -1,3 +1,3 @@
-A sentiment analysis app built using Ember and Rails. I am using this project as an exercise to build my knowledge of Ember, but the result is actually pretty cool: visit the app (saidit.herokuapp.com), enter any twitter handle, and generate a sentiment breakdown of the lanuguage contained in that tweeter's 20 most recent tweets.  
+A sentiment analysis app built using Ember.js and Rails. I am using this project as an exercise to build my knowledge of Ember.js (and D3.js), but the result is actually pretty cool: visit the app (saidit.herokuapp.com), enter any twitter handle, and generate a simple visualization of the sentiment expressed by that tweeter's 20 most recent tweets.  
 
 Thanks for checking SaidIt out!  PRs are always welcome :)
