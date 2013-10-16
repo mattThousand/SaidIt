@@ -12,7 +12,8 @@ SaidIt.BarChart.reopenClass({
                         pctSurprise,
                         pctDisgust,
                         pctAmbiguous) {
-    var margin, data;
+    var margin, data, duration;
+    duration = 800;
     data = [
             [pctJoy, 1, "Joy: "+pctJoy*100+"%", -60],
             [pctAnger, 2, "Anger: "+pctAnger*100+"%", -60],
@@ -89,8 +90,10 @@ SaidIt.BarChart.reopenClass({
             .data(data)
           .enter().append("rect")
             .attr("x", function(d, i) { return ((d[1]-1)*150+50); })
-            .attr("y", function(d) { return Math.max(height - Math.max((d[0]*1000), 10), 50); })
             .attr("width", width/8)
+            .transition()
+            .duration(duration)
+            .attr("y", function(d) { return Math.max(height - Math.max((d[0]*1000), 10), 50); })
             .attr("height", function(d) { return (Math.max(d[0]*1000, 10))});
 
     chart.append("line")
@@ -100,7 +103,7 @@ SaidIt.BarChart.reopenClass({
      .attr("y2", height - .5)
      .style("stroke", "#f5f5f5");
 
-    chart.selectAll(".text").data(data).enter().append("text").attr(attrs.text).text(getText);
+    chart.selectAll(".text").data(data).enter().append("text").transition().duration(duration).attr(attrs.text).text(getText);
     chart.selectAll(".rect").data(data).enter().append("rect").attr(attrs.rect).on("mouseover", onMouseOver).on("mouseout", onMouseOut);
 
   
